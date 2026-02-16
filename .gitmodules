@@ -1,0 +1,4 @@
+[submodule "sprint-3-spots"]
+	path = sprint-3-spots
+	url = https://github.com/ZionBell13/se_project_spots.git
+	branch = main
