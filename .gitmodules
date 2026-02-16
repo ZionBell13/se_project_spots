@@ -1,4 +1,4 @@
-[submodule "sprint-3-spots"]
-	path = sprint-3-spots
+[submodule "se_project_spots"]
+	path = se_project_spots
 	url = https://github.com/ZionBell13/se_project_spots.git
 	
