@@ -2,3 +2,6 @@
 	path = se_project_spots
 	url = https://github.com/ZionBell13/se_project_spots.git
 	
+[submodule "se_projects_spots"]
+	path = se_projects_spots
+	url = https://github.com/ZionBell13/se_project_spots.git
