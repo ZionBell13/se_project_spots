@@ -1,0 +1,114 @@
+.modal {
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.modal_is-opened {
+  visibility: visible;
+}
+
+.modal__container {
+  max-width: 730px;
+  width: 100%;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 1);
+  padding: 32px 50px;
+  position: relative;
+}
+
+.modal__close-button {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  top: 32px;
+  right: 50px;
+  width: 40px;
+  height: 40px;
+  opacity: 40%;
+  background-color: transparent;
+  border: none;
+}
+
+.modal__title {
+  margin: 0 0 32px;
+  font-family: Poppins;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 32px;
+  line-height: 100%;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__label {
+  margin: 0 0 32px;
+  width: 100%;
+  font-family: "Poppins", "Times New Roman", Times, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 110%;
+  color: rgba(33, 33, 33, 0.7);
+}
+
+.modal__input {
+  display: flex;
+  flex-direction: column;
+  margin: 8px 0 0;
+  width: 100%;
+  font-family: "Poppins", "Times New Roman", Times, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 100%;
+  padding: 16px 12px;
+  border: 1px solid rgba(33, 33, 33, 0.4);
+  border-radius: 8px;
+}
+
+.modal__input::placeholder {
+  color: rgba(33, 33, 33, 0.3);
+}
+
+.modal__save-button {
+  cursor: pointer;
+  margin-right: auto;
+  margin-top: auto;
+  text-align: center;
+  border-radius: 8px;
+  gap: 8px;
+  background-color: rgba(33, 33, 33, 1);
+  color: rgba(252, 245, 229, 1);
+  font-family: Poppins;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 100%;
+}
+
+@media screen and (max-width: 628px) {
+  .modal__title {
+    font-size: 20px;
+    margin: 0 0 20px;
+  }
+
+  .modal__input {
+    font-size: 16px;
+  }
+
+  .modal__save-button {
+    width: 100%;
+  }
+}
