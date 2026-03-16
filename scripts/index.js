@@ -41,8 +41,12 @@ function handleEditProfileSubmit(evt) {
      newPostModal.classList.remove("modal_is-opened");
 }
 
-editProfileForm.addEventListener("submit", handleEditProfileSubmit)
-cardFormElement.addEventListener("submit", handleAddCardFormSubmit)
+function handleAddCardSubmit(evt) {
+  evt.preventDefault();
+}
 
+
+editProfileForm.addEventListener("submit", handleEditProfileSubmit)
+addCardFormElement.addEventListener('submit', handleAddCardSubmit); // <-- cant find solution to execute.
 /* Getting the transitions to slowly open has been an issue for me. My modals
 are not cooperating when opened, and getting them to behave as instructed... well, ive hit a snag. I apologize for the incomplete submission. */
