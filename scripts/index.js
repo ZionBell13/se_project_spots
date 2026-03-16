@@ -47,6 +47,6 @@ function handleAddCardSubmit(evt) {
 
 
 editProfileForm.addEventListener("submit", handleEditProfileSubmit)
-cardFormElementardFormElement.addEventListener('submit', handleAddCardSubmit); // <-- cant find solution to execute.
+cardFormElement.addEventListener('submit', handleAddCardSubmit); // <-- cant find solution to execute.
 /* Getting the transitions to slowly open has been an issue for me. My modals
 are not cooperating when opened, and getting them to behave as instructed... well, ive hit a snag. I apologize for the incomplete submission. */
