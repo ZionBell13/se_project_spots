@@ -1,5 +1,7 @@
  .modal {
   visibility: hidden;
+  opacity: 0;
+  transition: .5s linear;
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
@@ -14,6 +16,7 @@
 
 .modal_is-opened {
   visibility: visible;
+  opacity: 1;
 }
 
 .modal__container {
@@ -23,6 +26,7 @@
   background-color: rgba(255, 255, 255, 1);
   padding: 32px 50px;
   position: relative;
+  box-sizing: border-box;
 }
 
 .modal__close-button {
@@ -31,16 +35,15 @@
   width: 40px;
   top: 32px;
   right: 50px;
-  width: 40px;
-  height: 40px;
   opacity: 40%;
   background-color: transparent;
   border: none;
+  cursor: pointer;
 }
 
 .modal__title {
   margin: 0 0 32px;
-  font-family: Poppins;
+  font-family: "Poppins", 'Times New Roman', Times, sans-serif;
   font-weight: 500;
   font-style: normal;
   font-size: 32px;
@@ -76,6 +79,7 @@
   padding: 16px 12px;
   border: 1px solid rgba(33, 33, 33, 0.4);
   border-radius: 8px;
+  box-sizing: border-box;
 }
 
 .modal__input::placeholder {
@@ -91,7 +95,7 @@
   gap: 8px;
   background-color: rgba(33, 33, 33, 1);
   color: rgba(252, 245, 229, 1);
-  font-family: Poppins;
+  font-family: "Poppins" 'Times New Roman', Times, sans-serif;
   font-weight: 500;
   font-style: normal;
   font-size: 16px;
@@ -110,5 +114,9 @@
 
   .modal__save-button {
     width: 100%;
+  }
+
+  .modal__container {
+    padding: 22px 12px 12px;
   }
 }

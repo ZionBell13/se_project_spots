@@ -9,9 +9,9 @@ const editProfileDescriptionInput = editProfileModal.querySelector("#profile-des
 const newPostButton = document.querySelector(".profile__new-button");
 const newPostModal = document.querySelector("#new-post-modal");
 const newPostCloseButton = newPostModal.querySelector(".modal__close-button");
-const cardFormElement = newPostModal.querySelector(".modal__form")
-const nameInput = newPostModal.querySelector("#card-image-input");
-const linkInput = newPostModal.querySelector(".modal__input");
+const cardFormElement = newPostModal.querySelector(".modal__form");
+const imageNameInput = newPostModal.querySelector("#card-image-input");
+const imageLinkInput = newPostModal.querySelector("#card-description-input");
 const profileNameElement = document.querySelector (".profile__name");
 const profileDescriptionElement = document.querySelector (".profile__description");
 
@@ -37,8 +37,7 @@ function handleEditProfileSubmit(evt) {
     evt.preventDefault();
     profileNameElement.textContent = editProfileNameInput.value;
     profileDescriptionElement.textContent = editProfileDescriptionInput.value
-     editProfileModal.classList.remove("modal_is-opened");
-     newPostModal.classList.remove("modal_is-opened");
+     editProfileModal.classList.remove("modal_is-opened");    
 }
 
 function handleAddCardSubmit(evt) {
@@ -46,7 +45,7 @@ function handleAddCardSubmit(evt) {
 }
 
 
-editProfileForm.addEventListener("submit", handleEditProfileSubmit)
+editProfileForm.addEventListener("submit", handleEditProfileSubmit);
 cardFormElement.addEventListener('submit', handleAddCardSubmit); // <-- cant find solution to execute.
 /* Getting the transitions to slowly open has been an issue for me. My modals
 are not cooperating when opened, and getting them to behave as instructed... well, ive hit a snag. I apologize for the incomplete submission. */
