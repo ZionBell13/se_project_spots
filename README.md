@@ -9,6 +9,9 @@
 
 **Intro**
 
+Hello Professor, I deeply apologize for getting in late, also, im so lost and stuck okn how to continue. I do not wish to turn this project in, especially in the state that it is in. But, unfortunately, im out of time and I need help on how to continue. Forgive me. Zion Bell
+
+
 This project is made so all the elements are displayed correctly on popular screen sizes. Building a responsive site that adapts individual elemrents to varying screen sizes,and mirroring figma layout at specific screen width points via media queries.
 
 **Figma**
