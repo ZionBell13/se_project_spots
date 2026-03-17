@@ -119,4 +119,9 @@
   .modal__container {
     padding: 22px 12px 12px;
   }
+
+  .modal__close-button {
+    top: 12px;
+    right: 12px;
+  }
 }

@@ -9,43 +9,49 @@ const editProfileDescriptionInput = editProfileModal.querySelector("#profile-des
 const newPostButton = document.querySelector(".profile__new-button");
 const newPostModal = document.querySelector("#new-post-modal");
 const newPostCloseButton = newPostModal.querySelector(".modal__close-button");
-const cardFormElement = newPostModal.querySelector(".modal__form");
-const imageNameInput = newPostModal.querySelector("#card-image-input");
-const imageLinkInput = newPostModal.querySelector("#card-description-input");
+const addCardFormElement = newPostModal.querySelector(".modal__form");
+const nameInput = newPostModal.querySelector("#card-image-input");
+const linkInput = newPostModal.querySelector("#card-description-input");
 const profileNameElement = document.querySelector (".profile__name");
 const profileDescriptionElement = document.querySelector (".profile__description");
 
 profileEditButton.addEventListener("click", function () {
     editProfileNameInput.value = profileNameElement.textContent;
     editProfileDescriptionInput.value = profileDescriptionElement.textContent;
-    editProfileModal.classList.add("modal_is-opened");
+    openModal(editProfileModal);
 });
 
 editProfileCloseButton.addEventListener("click",function () {
-    editProfileModal.classList.remove("modal_is-opened");
 });
 
 newPostButton.addEventListener("click", function () {
-    newPostModal.classList.add("modal_is-opened");
+    openModal(newPostModal);
 });
 
 newPostCloseButton.addEventListener("click",function() {
-    newPostModal.classList.remove("modal_is-opened");
+    closeModal(newPostModal);
 }); 
+
+
+function openModal(modal) {
+    modal.classList.add("modal_is-opened");
+}
+
+function closeModal(modal) {
+    modal.classList.remove("modal_is-opened");
+}
 
 function handleEditProfileSubmit(evt) {
     evt.preventDefault();
     profileNameElement.textContent = editProfileNameInput.value;
-    profileDescriptionElement.textContent = editProfileDescriptionInput.value
-     editProfileModal.classList.remove("modal_is-opened");    
+    profileDescriptionElement.textContent = editProfileDescriptionInput.value;
+     closeModal (editProfileModal);
 }
 
 function handleAddCardSubmit(evt) {
-  evt.preventDefault();
+    evt.preventDefault();
+    console.log(); //This is where im getting mixed up. How to write the syntax for the image link and captoin input, and how to write concise code to fulfill.
 }
 
-
 editProfileForm.addEventListener("submit", handleEditProfileSubmit);
-cardFormElement.addEventListener('submit', handleAddCardSubmit); // <-- cant find solution to execute.
-/* Getting the transitions to slowly open has been an issue for me. My modals
-are not cooperating when opened, and getting them to behave as instructed... well, ive hit a snag. I apologize for the incomplete submission. */
+addCardFormElement.addEventListener("submit", handleAddCardSubmit); 
