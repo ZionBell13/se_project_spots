@@ -11,7 +11,7 @@ const newPostModal = document.querySelector("#new-post-modal");
 const newPostCloseButton = newPostModal.querySelector(".modal__close-button");
 const addCardFormElement = newPostModal.querySelector(".modal__form");
 const nameInput = newPostModal.querySelector("#card-image-input");
-const linkInput = newPostModal.querySelector("#card-description-input");
+const linkInput = newPostModal.querySelector("#card-caption-input");
 const profileNameElement = document.querySelector (".profile__name");
 const profileDescriptionElement = document.querySelector (".profile__description");
 
@@ -22,6 +22,7 @@ profileEditButton.addEventListener("click", function () {
 });
 
 editProfileCloseButton.addEventListener("click",function () {
+    closeModal(editProfileModal);
 });
 
 newPostButton.addEventListener("click", function () {
@@ -50,7 +51,8 @@ function handleEditProfileSubmit(evt) {
 
 function handleAddCardSubmit(evt) {
     evt.preventDefault();
-    console.log(); //This is where im getting mixed up. How to write the syntax for the image link and captoin input, and how to write concise code to fulfill.
+    console.log(nameInput.value, linkInput.value);
+    closeModal(newPostModal);
 }
 
 editProfileForm.addEventListener("submit", handleEditProfileSubmit);
