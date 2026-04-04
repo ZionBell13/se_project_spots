@@ -47,74 +47,22 @@
         </section>
         <section class="cards page__section">
           <ul class="cards__list">
-            <li class="card">
+            <template id="card-template">  
+               <li class="card">
+                <button class="card__delete-btn" type="button">
+                  <img src="./images/deletebtn.svg" alt="Delete Button">
+                </button> 
               <img
-                src="./images/1-photo-by-moritz-feldmann-from-pexels.jpg"
-                alt="Cabin in Snow"
+                src=""
+                alt=""
                 class="card__image"
               />
               <div class="card__text">
-                <h2 class="card__label">Val Thorens</h2>
+                <h2 class="card__label"></h2>
                 <button type="button" class="card__like-btn"></button>
               </div>
             </li>
-            <li class="card">
-              <img
-                src="./images/2-photo-by-ceiline-from-pexels.jpg"
-                alt="outdoor cafe"
-                class="card__image"
-              />
-              <div class="card__text">
-                <h2 class="card__label">Restaurant terrace</h2>
-                <button type="button" class="card__like-btn"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/3-photo-by-tubanur-dogan-from-pexels.jpg"
-                alt="outdoor cafe"
-                class="card__image"
-              />
-              <div class="card__text">
-                <h2 class="card__label">An outdoor cafe</h2>
-                <button type="button" class="card__like-btn"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/4-photo-by-maurice-laschet-from-pexels.jpg"
-                alt="bridge over the forest canope"
-                class="card__image"
-              />
-              <div class="card__text">
-                <h2 class="card__label">
-                  A very long bridge, over the forest...
-                </h2>
-                <button type="button" class="card__like-btn"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/5-photo-by-van-anh-nguyen-from-pexels.jpg"
-                alt="tunnel with light entering windows"
-                class="card__image"
-              />
-              <div class="card__text">
-                <h2 class="card__label">Tunnel with morning light</h2>
-                <button type="button" class="card__like-btn"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/6-photo-by-moritz-feldmann-from-pexels.jpg"
-                alt="cabin in the snow"
-                class="card__image"
-              />
-              <div class="card__text">
-                <h2 class="card__label">Mountain house</h2>
-                <button type="button" class="card__like-btn"></button>
-              </div>
-            </li>
+            </template>  
           </ul>
         </section>
       </main>
@@ -123,7 +71,7 @@
       </footer>
       <div class="modal" id="edit-profile-modal">
         <div class="modal__container">
-          <button type="button" class="modal__close-button">
+          <button type="button" class="modal__close">
             <img src="./images/close.svg" alt="close button" />
           </button>
           <h2 class="modal__title">Edit profile</h2>
@@ -135,7 +83,7 @@
                 type="text"
                 class="modal__input"
                 placeholder="Type your name"
-              />
+              /> 
             </label>
             <label for="profile-description-input" class="modal__label"
               >Description
@@ -154,11 +102,11 @@
       </div>
       <div class="modal" id="new-post-modal">
         <div class="modal__container">
-          <button type="button" class="modal__close-button">
+          <button type="button" class="modal__close">
             <img src="./images/close.svg" alt="close button" />
           </button>
           <h2 class="modal__title">New post</h2>
-          <form class="modal__form">
+          <form class="modal__form" id="card-form">
             <label for="card-image-input" class="modal__label"
               >Image link
               <input
@@ -181,6 +129,18 @@
               <img src="./images/savebtn.svg" alt="save button" />
             </button>
           </form>
+        </div>
+      </div>
+
+      <div class="modal modal_type_preview modal_is-opened" id="preview-modal">
+        <div class="modal__image-container">
+          <button type="button" class="modal__close modal__close_type_preview">
+            <img src="./images/close.svg" alt="close button" />
+          </button>
+          <img src="#" 
+                alt="">
+          <p class="modal__caption"></p>
+          
         </div>
       </div>
     </div>
