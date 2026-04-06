@@ -1,5 +1,3 @@
-/* HELP: All my photos have dissapeared, I have spent the past day trying to figure out what went wrong. Apologies for lack of completion.*/
-
 const initialCards = [
 {
     name: "Golden Gate Bridge",
@@ -46,7 +44,7 @@ const newPostButton = document.querySelector(".profile__new-button");
 const newPostModal = document.querySelector("#new-post-modal");
 const newPostCloseButton = newPostModal.querySelector(".modal__close");
 const addCardFormElement = newPostModal.querySelector(".modal__form");
-const newPostNameInput = newPostModal.querySelector("#card-name-input");
+const newPostNameInput = newPostModal.querySelector("#card-caption-input");
 const newPostLinkInput = newPostModal.querySelector("#card-image-input");
 const profileNameElement = document.querySelector (".profile__name");
 const profileDescriptionElement = document.querySelector (".profile__description");
