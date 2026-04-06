@@ -106,6 +106,9 @@ newPostCloseButton.addEventListener("click", function() {
     closeModal(newPostModal);
 }); 
 
+previewModalCloseBtn.addEventListener("click", function () {
+    closeModal(previewModal);
+});
 
 function openModal(modal) {
     modal.classList.add("modal_is-opened");

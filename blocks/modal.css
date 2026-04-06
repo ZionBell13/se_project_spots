@@ -103,6 +103,7 @@
 }
 
 .modal__save-button {
+  border: none;
   cursor: pointer;
   margin-right: auto;
   margin-top: auto;
