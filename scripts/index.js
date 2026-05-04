@@ -116,6 +116,7 @@ previewModalCloseBtn.addEventListener("click", function () {
 
 function openModal(modal) {
     modal.classList.add("modal_is-opened");
+    evt.target.classList.contains('modal');
 }
 
 function closeModal(modal) {

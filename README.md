@@ -10,6 +10,7 @@
 **Intro**
 
 This project is made so all the elements are displayed correctly on popular screen sizes. Building a responsive site that adapts individual elemrents to varying screen sizes,and mirroring figma layout at specific screen width points via media queries. Adding in UX capabillities via javascript allows the user to add own posts, but to ability to submit information, as well as delete any photo they do not wish to possess in array.
+Additionally, updated HTML markup was used for validation forms. Developing the javasceipt validation file allows for clean, organized code, as well as managing the validation tasks at hand, i.e card and edit form submissions/resets in modals.
 
 **Figma**
 
@@ -23,4 +24,10 @@ The way you'll do this at work is by exporting images directly from Figma — we
 
 **Project Pitch Video**
 
+
+Spots Stage 9 Video
+# https://drive.google.com/file/d/1wQjS7oU5yzXZGPrJ6h73TqYYBh_n6Ec7/view?usp=sharing
+
+// First Video Submission
 # https://drive.google.com/file/d/1a7_sVutHDIZDiNAuKgyxE5Kk6ujjO4zS/view?usp=sharing
+
