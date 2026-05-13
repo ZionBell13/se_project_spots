@@ -7,14 +7,14 @@ const settings = {
   errorClass: "modal__error_visible"
 }
 
-const showInputError = (formEl, inputEl, errorMsg) => {
+const showInputError = (formEl, inputEl, errorMsg, config) => {
     const errorMsgEl = formEl.querySelector(`#${inputEl.id}-error`);
     errorMsgEl.textContent = errorMsg;
     inputEl.classList.add(config.inputErrorClass); 
-     //TODO - Error Mesasges for rest of error messages. Video=part 3
+    errorMsgEl.classList.add(config.errorClass);
 };
 
-const hideInputError = (formEl, inputEl) => {
+const hideInputError = (formEl, inputEl, config) => {
     const errorMsgEl = formEl.querySelector(`#${inputEl.id}-error`);
     errorMsgEl.textContent = "";
     inputEl.classList.remove(config.inputErrorClass); 
@@ -22,7 +22,7 @@ const hideInputError = (formEl, inputEl) => {
 
 const checkInputValidity = (formEl, inputEl, config) => {
     if (!inputEl.validity.valid) {
-       showInputError(formEl, inputEl, inputEl.validationMessage);  
+       showInputError(formEl, inputEl, inputEl.validationMessage, config);  
     } else {
         hideInputError(formEl, inputEl, config);
     }
@@ -53,24 +53,24 @@ const enableButton = (buttonEl,config) => {
     buttonEl.disabled = false;
 }
 
-const resetValidation = (formEl, inputList, config) => {
+const resetValidation = (formEl, inputList, buttonEl, config) => {
     inputList.forEach((input) => {
         hideInputError(formEl, input, config);
-        toggleButtonState(formEl,inputList, config);
+        toggleButtonState(inputList, buttonEl, config);
     });
 
 };
 
 const setEventListeners = (formEl, config) => {
     const inputList = Array.from(formEl.querySelectorAll(config.inputSelector));
-    const buttonElement = formEl.querySelector(config.submitButtonSelector);
+    const buttonEl = formEl.querySelector(config.submitButtonSelector);
   
-toggleButtonState(inputList, buttonElement, config);
+toggleButtonState(inputList, buttonEl, config);
     
     inputList.forEach((inputElement) => {
     inputElement.addEventListener("input", function () {
       checkInputValidity(formEl, inputElement, config);
-      toggleButtonState(inputList, buttonElement, config);
+      toggleButtonState(inputList, buttonEl, config);
     });
   });
 };
