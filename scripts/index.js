@@ -61,6 +61,18 @@ const cardTemplate = document
     .content.querySelector(".card");
 const cardsList = document.querySelector(".cards__list");
 
+document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+    if (editProfileModal.classList.contains("modal_is-opened")) {
+        editProfileModal.classList.remove("modal_is-opened");
+    } else if (newPostModal.classList.contains("modal_is-opened")) {
+        newPostModal.classList.remove("modal_is-opened");
+    } else if (previewModal.classList.contains("modal_is-opened")) {
+        previewModal.classList.remove("modal_is-opened");
+    }
+}
+});
+
 function getCardElement(data) {
     const cardElement = cardTemplate.cloneNode(true);
     const cardTitleEl = cardElement.querySelector(".card__label");
@@ -114,6 +126,18 @@ previewModalCloseBtn.addEventListener("click", function () {
     closeModal(previewModal);
 });
 
+editProfileModal.addEventListener("click", (evt) => {
+    clickOverlayToClose(editProfileModal, evt);
+});
+
+newPostModal.addEventListener("click", (evt) => {
+    clickOverlayToClose(newPostModal, evt);
+});
+
+previewModal.addEventListener("click", (evt) => {
+    clickOverlayToClose(previewModal, evt);
+});
+
 function openModal(modal, evt) {
     modal.classList.add("modal_is-opened");
     evt.target.classList.contains('.modal__save-button');
@@ -121,6 +145,12 @@ function openModal(modal, evt) {
 
 function closeModal(modal) {
     modal.classList.remove("modal_is-opened");
+}
+
+function clickOverlayToClose(modal, evt) {
+    if (evt.target === evt.currentTarget) {
+    closeModal(modal);
+    }
 }
 
 function handleEditProfileSubmit(evt) {
