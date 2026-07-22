@@ -1,4 +1,6 @@
-// TO DO - pass settings objects to validation functions that are called in this file
+import "./index.css";
+import { enableValidation, settings, resetValidation, disableButton } from "../scripts/validation.js";
+
 
 const initialCards = [
 {
@@ -78,9 +80,9 @@ function getCardElement(data) {
     const cardTitleEl = cardElement.querySelector(".card__label");
     const cardImageEl = cardElement.querySelector(".card__image");
 
-    cardImageEl.src = data.link;
     cardImageEl.alt = data.name;
     cardTitleEl.textContent = data.name;
+    cardImageEl.src = data.link;
 
     const cardLikeBtnEl = cardElement.querySelector(".card__like-btn");
     cardLikeBtnEl.addEventListener("click", () => {
@@ -140,7 +142,6 @@ previewModal.addEventListener("click", (evt) => {
 
 function openModal(modal, evt) {
     modal.classList.add("modal_is-opened");
-    evt.target.classList.contains('.modal__save-button');
 }
 
 function closeModal(modal) {
@@ -183,4 +184,4 @@ initialCards.forEach(function (item) {
   cardsList.append(cardElement);
 });
 
-
+enableValidation(settings);
