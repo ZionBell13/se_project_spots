@@ -65,6 +65,7 @@ const avatarLinkInput = avatarModal.querySelector("#profile-avatar-input");
 const deleteModal = document.querySelector("#delete-modal");
 const deleteForm = deleteModal.querySelector(".modal__form");
 const deleteModalCloseButton = deleteModal.querySelector(".modal__close");
+const deleteCancelButton = deleteModal.querySelector(".modal__cancel-button");
 
 
 const previewModal = document.querySelector("#preview-modal");
@@ -78,21 +79,6 @@ const cardTemplate = document
 const cardsList = document.querySelector(".cards__list");
 
 let selectedCard, selectedCardID;
-
-
-document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape") {
-    if (editProfileModal.classList.contains("modal_is-opened")) {
-        editProfileModal.classList.remove("modal_is-opened");
-    } else if (newPostModal.classList.contains("modal_is-opened")) {
-        newPostModal.classList.remove("modal_is-opened");
-    } else if (previewModal.classList.contains("modal_is-opened")) {
-        previewModal.classList.remove("modal_is-opened");
-    } else if (avatarModal.classList.contains("modal_is-opened")) {
-        avatarModal.classList.remove("modal_is-opened");
-    }
-    }
-});
 
 
 function getCardElement(data) {
@@ -145,6 +131,11 @@ deleteModalCloseButton.addEventListener("click", function () {
     closeModal(deleteModal);
 });
 
+deleteCancelButton.addEventListener("click", function () {
+    closeModal(deleteModal);
+});
+
+
 avatarCloseButton.addEventListener("click", function () {
     closeModal(avatarModal);
 });
@@ -169,9 +160,9 @@ function handleEscape(evt) {
     }
 }
 
-function openModal(modal, evt) {
+function openModal(modal) {
     modal.classList.add("modal_is-opened");
-    document.addEventListener("keydown", handleEscape)  
+    document.addEventListener("keydown", handleEscape);
 }
 
 function closeModal(modal) {
@@ -206,6 +197,7 @@ function handleEditProfileSubmit(evt) {
 
 function handleAddCardSubmit(evt) {
     evt.preventDefault(); 
+    setButtonText(cardSubmitButton, true, "Save", "Saving...");
     const inputValues = {
         name: newPostNameInput.value, 
         link: newPostLinkInput.value,
@@ -220,7 +212,10 @@ function handleAddCardSubmit(evt) {
             closeModal(newPostModal);
             
         })
-        .catch(console.error);
+        .catch(console.error)
+        .finally(() => {
+            setButtonText(cardSubmitButton, false, "Save", "Saving...");
+        });
 }
 
 function handleAvatarSubmit(evt) {
@@ -230,6 +225,8 @@ function handleAvatarSubmit(evt) {
     .editAvatarInfo({ avatar: avatarLinkInput.value })
         .then((data) => {
             profileAvatarElement.src = avatarLinkInput.value;
+            avatarFormElement.reset();
+            disableButton(avatarSaveButton, settings);
             closeModal(avatarModal);
         })
         .catch(console.error)
@@ -248,7 +245,10 @@ function handleDeleteSubmit(evt) {
             selectedCard.remove();
             closeModal(deleteModal);
         })
-        .catch(console.error);
+        .catch(console.error)
+        .finally(() => {
+            setButtonText(deleteSubmitButton, false, "Delete", "Deleting...");
+        });
 }
 
 function handleDeleteCard(cardElement, cardID) {

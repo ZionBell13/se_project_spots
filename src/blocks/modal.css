@@ -50,6 +50,11 @@
   right: -52.5px;
 }
 
+.modal__close_type_delete {
+  top: 0px;
+  right: -52px;
+}
+
 .modal__close:hover {
   opacity: 1;
 }
@@ -63,9 +68,26 @@
   line-height: 100%;
 }
 
+.modal__title_type_delete {
+  font-family: Poppins;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 100%;
+  text-align: center;
+}
+  
 .modal__form {
   display: flex;
   flex-direction: column;
+}
+
+.modal__form_type_delete {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
 }
 
 .modal__label {
@@ -116,18 +138,23 @@
 }
 
 .modal__save-button {
+  width: 156px;
+  height: 52px;
+  opacity: 1;
+  padding-top: 18px;
+  padding-right: 32px;
+  padding-bottom: 18px;
+  padding-left: 32px;
+  border-radius: 8px;
   border: none;
   cursor: pointer;
   margin-right: auto;
   margin-top: auto;
   text-align: center;
   border-radius: 8px;
-  gap: 8px;
   background-color: rgba(33, 33, 33, 1);
   color: rgba(252, 245, 229, 1);
   font-family: "Poppins", "Times New Roman", "Times", sans-serif;
-  font-weight: 500;
-  font-style: normal;
   font-size: 16px;
   line-height: 100%;
 }
@@ -135,6 +162,54 @@
 .modal__save-button_disabled {
   opacity: 0.5;
   pointer-events: none;
+}
+
+.modal__delete-button {
+  width: 156px;
+  height: 52px;
+  padding-top: 18px;
+  padding-right: 32px;
+  padding-bottom: 18px;
+  padding-left: 32px;
+  gap: 8px;
+  opacity: 1;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 8px;
+  gap: 8px;
+  background-color: rgba(255, 101, 101, 1);
+  color: rgba(33, 33, 33, 1);
+  font-family: "Poppins", "Times New Roman", "Times", sans-serif;
+  font-size: 16px;
+  line-height: 100%;
+}
+
+.modal__cancel-button {
+  width: 156px;
+  height: 52px;
+  padding-top: 18px;
+  padding-right: 32px;
+  padding-bottom: 18px;
+  padding-left: 32px;
+  gap: 8px;
+  opacity: 1;
+  border-radius: 8px;
+  border-width: 1px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 8px;
+  border: 1px solid rgba(33, 33, 33, 1);
+  gap: 8px;
+  background-color: transparent;
+  color: rgba(33, 33, 33, 1);
+  font-family: "Poppins", "Times New Roman", "Times", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 100%;
 }
 
 .modal__image-container {
