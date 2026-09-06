@@ -20,11 +20,16 @@
       </header>
       <main class="content">
         <section class="profile page__section">
+          <div class="profile__image-container">
+          <button class="profile__image-button">
+            <img src="./images/pencil-icon.svg" alt="Pencil Icon" class="profile_pencil-icon" />
+          </button>
           <img
-            src="./images/avatar.jpg"
+            src="./images/avatar.jpg" 
             alt="Bessie Cleman image"
             class="profile__image"
           />
+          </div>
           <div class="profile__column">
             <h1 class="profile__name">
               Aliaune Damala Bouga Time Bongo Puru Nacka Lu Lu Lu Badara Akon
@@ -74,7 +79,7 @@
             <img src="./images/close.svg" alt="close button" />
           </button>
           <h2 class="modal__title">Edit profile</h2>
-          <form class="modal__form" id="edit-profile-form" novalidate>
+          <form class="modal__form modal__form_type_validate" id="edit-profile-form" novalidate>
             <label for="profile-name-input" class="modal__label"
               >Name
               <input
@@ -102,7 +107,7 @@
               <span class="modal__error" id="profile-description-input-error"></span>
             </label>
             <button type="submit" class="modal__save-button" id="edit-profile-save-button">
-              <img src="./images/savebtn.svg" alt="save button" />
+              Save
             </button>
           </form>
         </div>
@@ -113,7 +118,7 @@
             <img src="./images/close.svg" alt="close button" />
           </button>
           <h2 class="modal__title">New post</h2>
-          <form class="modal__form" id="card-form" novalidate>
+          <form class="modal__form modal__form_type_validate" id="card-form" novalidate>
             <label for="card-image-input" class="modal__label"
               >Image link
               <input
@@ -139,7 +144,7 @@
               <span id="card-caption-input-error" class="modal__error"></span>
             </label>
             <button type="submit" class="modal__save-button" id="new-post-save-button">
-              <img src="./images/savebtn.svg" alt="save button" />
+              Save
             </button>
           </form>
         </div>
@@ -159,5 +164,45 @@
         </div>
       </div>
     </div>
+
+    <div class="modal" id="edit-avatar-modal">
+        <div class="modal__container">
+          <button type="button" class="modal__close">
+            <img src="./images/close.svg" alt="close button" />
+          </button>
+          <h2 class="modal__title">Edit avatar</h2>
+          <form class="modal__form modal__form_type_validate" id="edit-avatar-form" novalidate>
+            <label for="profile-avatar-input" class="modal__label"
+              >Avatar
+              <input
+                id="profile-avatar-input"
+                type="text"
+                class="modal__input"
+                name="avatar"
+                placeholder="Paste a link to your avatar"
+                required
+              /> 
+              <span class="modal__error" id="profile-avatar-input-error"></span>
+            </label>
+            <button type="submit" class="modal__save-button" id="edit-avatar-save-button">
+              Save
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="modal" id="delete-modal">
+        <div class="modal__container">
+          <button type="button" class="modal__close modal__close_type_delete">
+            <img src="./images/close.svg" alt="close button" />
+          </button>
+          <h2 class="modal__title modal__title_type_delete">Are you sure you want to delete this image?</h2>
+          <form class="modal__form modal__form_type_delete" id="delete-form" novalidate>
+            <button type="submit" class="modal__delete-button" id="delete-delete-button">Delete
+            </button>
+            <button type="button" class="modal__cancel-button" id="delete-cancel-button">Cancel</button>
+            
+          </form>
+        </div>
+      </div>
   </body>
 </html>

@@ -1,5 +1,5 @@
 export const settings = {
-  formSelector: ".modal__form",
+  formSelector: ".modal__form_type_validate",
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__save-button",
   inactiveButtonClass: "modal__save-button_disabled",
@@ -38,8 +38,7 @@ const toggleButtonState = (inputList, buttonEl, config) => {
    if (hasInvalidInput(inputList)) {
     disableButton(buttonEl, config);
    } else {
-    enableButton(buttonEl,config)
-    buttonEl.disabled = false;
+    enableButton(buttonEl,config) 
    }
 };
 
